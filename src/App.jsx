@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import SearchBar from './components/SearchBar';
+import HomeScreen from './pages/List'
+import { useScreen } from './context/ScreenContext';
+import CartPage from './pages/CartPage';
 
 function App() {
-  const [category, setCategory] = useState('dairy')
+  const { currentScreen } = useScreen()
+  
   return (
-    <div className="App">
-      <SearchBar selected={category} handleChange={setCategory}/>
-    </div>
+    currentScreen === 'list' ? <HomeScreen /> : <CartPage />
   );
 }
 
