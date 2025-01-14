@@ -25,11 +25,13 @@ const CartList = () => {
         acc[product.category].push(product);
         return acc;
     }, {})
-    
+
     return (
-        <div className="fixed inset-0 bg-gray-100 overflow-y-auto p-4">
-            <h2 className="text-xl font-bold mb-4">My Cart</h2>
-            <button onClick={setToListScreen} className='absolute right-5 top-4'>X</button>
+        <div className="bg-gray-100 overflow-y-auto p-4">
+            <div className='flex justify-between text-xl mb-4'>
+                <h2 className='font-bold'>My Cart</h2>
+                <button onClick={setToListScreen}><h2>X</h2></button>
+            </div>
             <div>
                 {Object.keys(groupByCategory)
                     .map(category => (

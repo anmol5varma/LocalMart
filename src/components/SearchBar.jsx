@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
-import { CATEGORIES, SHOP_NAME } from "../constants";
+import { CATEGORIES } from "../constants";
 import { useScreen } from '../context/ScreenContext';
 
 const SearchBar = ({ selected, handleChange }) => {
   const { searchText, setSearchText } = useScreen()
   return (
     <div className="top-[56px] bg-white z-40">
-      <div className='bg-indigo-500 p-2 font-bold text-white text-lg'>{SHOP_NAME}</div>
       <div className="w-full p-2 bg-white z-50" role="search">
         <input
           type="text"
