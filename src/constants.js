@@ -210,10 +210,75 @@ export const PRODUCT_LIST = [
         "title": "Product 30 Title",
         "mrp": 245,
         "category": "oil and ghee"
-    }
+    },
+    {
+        "id": "31",
+        "photoUrl": "link_to_photo21.jpg",
+        "title": "Product 31 Title",
+        "mrp": 200,
+        "category": "dairy"
+    },
+    {
+        "id": "32",
+        "photoUrl": "link_to_photo22.jpg",
+        "title": "Product 32 Title",
+        "mrp": 205,
+        "category": "vegetables"
+    },
+    {
+        "id": "33",
+        "photoUrl": "link_to_photo23.jpg",
+        "title": "Product 33 Title",
+        "mrp": 210,
+        "category": "snacks"
+    },
+    {
+        "id": "34",
+        "photoUrl": "link_to_photo24.jpg",
+        "title": "Product 34 Title",
+        "mrp": 215,
+        "category": "soft drinks"
+    },
+    {
+        "id": "35",
+        "photoUrl": "link_to_photo25.jpg",
+        "title": "Product 35 Title",
+        "mrp": 220,
+        "category": "oil and ghee"
+    },
+    {
+        "id": "36",
+        "photoUrl": "link_to_photo26.jpg",
+        "title": "Product 36 Title",
+        "mrp": 225,
+        "category": "dairy"
+    },
+    {
+        "id": "37",
+        "photoUrl": "link_to_photo27.jpg",
+        "title": "Product 37 Title",
+        "mrp": 230,
+        "category": "vegetables"
+    },
+    {
+        "id": "38",
+        "photoUrl": "link_to_photo28.jpg",
+        "title": "Product 38 Title",
+        "mrp": 235,
+        "category": "snacks"
+    },
+    {
+        "id": "39",
+        "photoUrl": "link_to_photo29.jpg",
+        "title": "Product 39 Title",
+        "mrp": 240,
+        "category": "soft drinks"
+    },
 ]
 
 export const PHONE_NUMBER = "91<10 digit phone number for seller>"
+
+export const SHOP_NAME = "LocalMart"
 
 export const SCREEN_TYPES = {
     HOME: 'list',

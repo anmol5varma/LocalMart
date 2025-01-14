@@ -1,18 +1,23 @@
 import PropTypes from 'prop-types';
-import { CATEGORIES } from "../constants";
+import { CATEGORIES, SHOP_NAME } from "../constants";
+import { useScreen } from '../context/ScreenContext';
 
 const SearchBar = ({ selected, handleChange }) => {
+  const { searchText, setSearchText } = useScreen()
   return (
-    <div className="top-[56px] bg-white z-40 overflow-x-auto whitespace-nowrap">
+    <div className="top-[56px] bg-white z-40">
+      <div className='bg-indigo-500 p-2 font-bold text-white text-lg'>{SHOP_NAME}</div>
       <div className="w-full p-2 bg-white z-50" role="search">
         <input
           type="text"
           placeholder="Search products..."
-          className="w-full p-2 text-sm rounded-md"
+          className="w-full p-2 text-sm rounded-md border"
           aria-label="Search products"
+          value={searchText}
+          onChange={evt => setSearchText(evt.target.value)}
         />
       </div>
-      <div role="navigation" className='pb-1'>
+      <div role="navigation" className='pb-1 overflow-x-auto whitespace-nowrap'>
         {CATEGORIES.map(category => (
           <span
             key={category}

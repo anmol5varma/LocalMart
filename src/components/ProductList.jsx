@@ -2,13 +2,19 @@ import ProductCard from './ProductCard';
 import { PRODUCT_LIST } from '../constants';
 import { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { useScreen } from '../context/ScreenContext';
 
 const ProductList = ({ category }) => {
+    const { searchText } = useScreen()
+
     const filteredProducts = useMemo(() => {
-        return PRODUCT_LIST.filter(product => product.category === category);
-    }, [category]);
+        if (searchText)
+            return PRODUCT_LIST.filter(product => product?.category === category && product?.title?.toLowerCase()?.includes(searchText?.toLowerCase()))
+        return PRODUCT_LIST.filter(product => product?.category === category);
+    }, [category, searchText]);
+
     return (
-        <div className="container mx-auto px-4 mt-4">
+        <div className="container mb-20 px-4 mt-4">
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {filteredProducts.map(product => (
                     <ProductCard

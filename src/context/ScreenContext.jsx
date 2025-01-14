@@ -8,11 +8,12 @@ export const useScreen = () => useContext(ScreenContext);
 
 export const ScreenProvider = ({ children }) => {
     const [currentScreen, setCurrentScreen] = useState(SCREEN_TYPES.HOME);
+    const [searchText, setSearchText] = useState('');
 
     const setToCartScreen = () => setCurrentScreen(SCREEN_TYPES.CART)
     const setToListScreen = () => setCurrentScreen(SCREEN_TYPES.HOME)
 
-    const value = { currentScreen, setToCartScreen, setToListScreen };
+    const value = { currentScreen, setToCartScreen, setToListScreen, searchText, setSearchText };
 
     return <ScreenContext.Provider value={value}>{children}</ScreenContext.Provider>;
 };
