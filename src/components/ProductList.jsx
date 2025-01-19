@@ -1,5 +1,5 @@
 import ProductCard from './ProductCard';
-import { PRODUCT_LIST } from '../constants';
+import { CATEGORIES, PRODUCT_LIST } from '../constants';
 import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useScreen } from '../context/ScreenContext';
@@ -9,8 +9,8 @@ const ProductList = ({ category }) => {
 
     const filteredProducts = useMemo(() => {
         if (searchText)
-            return PRODUCT_LIST.filter(product => product?.category === category && product?.title?.toLowerCase()?.includes(searchText?.toLowerCase()))
-        return PRODUCT_LIST.filter(product => product?.category === category);
+            return PRODUCT_LIST.filter(product => (category === CATEGORIES[0] || product?.category === category) && product?.title?.toLowerCase()?.includes(searchText?.toLowerCase()))
+        return PRODUCT_LIST.filter(product => category === CATEGORIES[0] || product?.category === category);
     }, [category, searchText]);
 
     return (
@@ -24,6 +24,7 @@ const ProductList = ({ category }) => {
                         title={product.title}
                         mrp={product.mrp}
                         category={product.category}
+                        volume={product.volume}
                     />
                 ))}
             </div>
