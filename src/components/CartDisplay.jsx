@@ -6,7 +6,7 @@ import { PHONE_NUMBER } from '../constants';
 import { constructMessageOnWhatsapp } from '../util';
 
 const CartList = () => {
-    const { cartItems } = useCart();
+    const { cartItems, clearCart } = useCart();
     const { setToListScreen } = useScreen()
 
     const subtotal = cartItems.reduce((total, item) => total + item.mrp * item.quantity, 0);
@@ -30,7 +30,10 @@ const CartList = () => {
         <div className="bg-gray-100 overflow-y-auto p-4">
             <div className='flex justify-between text-xl mb-4'>
                 <h2 className='font-bold'>My Cart</h2>
-                <button onClick={setToListScreen}><h2>X</h2></button>
+                <div className='flex'>
+                    <button onClick={clearCart} className="bg-indigo-500 hover:bg-indigo-700 text-white text-xs rounded mr-2 p-2">Clear</button>
+                    <button onClick={setToListScreen} className="bg-indigo-500 hover:bg-indigo-700 text-white text-xs rounded p-2">Back</button>
+                </div>
             </div>
             <div>
                 {Object.keys(groupByCategory)

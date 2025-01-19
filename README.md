@@ -26,7 +26,6 @@ If they provided me an interface to view things in their shop, take the order an
 
 # Future enhancements
 Before developing further, I am currently testing it with nearby local vendors. If they find it usefu these points can be picked up to enhance the site.
-* Persist cart context.
 * Integrate a CMS/Google sheet to get product details, vendor contact number and categories available.
 * Add option to choose between different size 1L|500ml|200ml for a given product enhancing the user experience.
 * Add a backend to save orders and show previous orders.
