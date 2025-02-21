@@ -8,7 +8,7 @@ export const constructMessageOnWhatsapp = (groupedByCategory, address) => {
             total += (product.mrp * product.quantity)
         });
     });
-    message += `\n**Total: ₹${total}\n`
+    message += `\n*Total: ₹${total}*\n`
 
     // Encoding the message for use in a URL (e.g., WhatsApp link)
     return encodeURIComponent(message);
