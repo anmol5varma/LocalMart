@@ -4,7 +4,7 @@ export const CATEGORIES = ["all", "dairy", "vegetables", "snacks", "soft drinks"
 
 export { PRODUCT_LIST }
 
-export const PHONE_NUMBER = "91<10 digit phone number for seller>"
+export const PHONE_NUMBER = "918098469331"
 
 export const SHOP_NAME = "LocalMart"
 
